@@ -10,19 +10,11 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
     <div class="ui feed">
-      <% @messages.each do |message| %>
-        <div class="event">
-          <div class="content">
-          <div class="summary">
-            <em><%= message.user.username %></em>: <%= message.body %>
-          </div>
-        </div>
-      </div>
-      <% end %>
+    <%= render @messages %>
     </div>
   </div>
     <div class="extra content">
-          <form class="ui reply form">
+      <form class="ui reply form">
        <div class="field">
          <div class="ui fluid icon input">
            <input type="text" placeholder="Create Quext...">
@@ -49,7 +41,7 @@
             Friends
           </a>
         </div>
-        </div>
       </div>
     </div>
   </div>
+</div>
