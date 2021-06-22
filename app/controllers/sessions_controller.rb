@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Quext Credentials Accepted"
       redirect_to root_path
     else
-      falsh.now[:error] = "Login Credentials Not Corrrect"
+      flash.now[:error] = "Login Credentials Not Corrrect"
       render 'new'
     end
   end
