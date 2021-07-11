@@ -9,24 +9,27 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:success] = "Quext Credentials Accepted"
+      flash[:violet] = " You Won"
       redirect_to root_path
     else
-      flash.now[:error] = "Login Credentials Not Corrrect"
+      flash.now[:violet] = "Wrong Password Or UserName"
       render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "You Have Logged Out Of Quext"
+    flash[:violet] = "End Text Game"
     redirect_to login_path
   end
 
 
+
+  private
+
   def logged_in_redirect
     if logged_in?
-      flash[:error] = "You Are Currently Signed In"
+      flash[:teal] = "You Are Using Quext Now."
       redirect_to root_path
     end
   end
