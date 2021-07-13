@@ -2,18 +2,21 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
 
-def current_user
-  @current_user ||= User.find(session[:user_id]) if session[:user_id]
-end
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 
-def logged_in?
-  !!current_user
-end
 
-def require_user
-  if !logged_in?
-    flash[:error] = "Sign In To Continue"
-    redirect_to login_path
+
+  def logged_in?
+    !!current_user
+  end
+
+
+  def require_user
+    if !logged_in?
+      flash[:error] = "You Must Have A Quext Account To Do What You Are Doing."
+      redirect_to login_path
     end
   end
 end
