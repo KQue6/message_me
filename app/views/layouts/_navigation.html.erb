@@ -6,16 +6,20 @@
     <div class="ui dropdown item">
       Account <i class="dropdown icon"></i>
     <div class="menu">
+
+
+
       <% if logged_in? %>
-        <%= link_to "Sign Out", logout_path, method: :delete, class: "item" %>
+        <%= link_to "Quext Out", logout_path, method: :delete, class: "item" %>
       <% else %>
-        <%= link_to "Sign In", login_path, class: "item" %>
+        <%= link_to "Quext In", login_path, class: "item" %>
       <% end %>
     </div>
   </div>
+
   <% if !logged_in? %>
     <div class="item">
-      <%= link_to "Sign In", login_path, class: "ui purple button" %>
+      <%= link_to "Quext In", login_path, class: "ui blue button" %>
     </div>
   <% end %>
 </div>
