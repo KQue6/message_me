@@ -35,6 +35,3 @@ def logged_in_redirect
 end
 
 end
-
-
-end
