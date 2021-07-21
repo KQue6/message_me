@@ -6,5 +6,4 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('#message-container').append data.mod_message
-    
+  
